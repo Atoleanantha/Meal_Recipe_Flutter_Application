@@ -8,7 +8,6 @@ class FiltersScreen extends StatefulWidget {
     return _FiltersScreenState();
   }
 }
-
 class _FiltersScreenState extends State<FiltersScreen> {
   var _glutenFreeFilterSet=false;
   var _lactoseFreeFilterSet=false;
