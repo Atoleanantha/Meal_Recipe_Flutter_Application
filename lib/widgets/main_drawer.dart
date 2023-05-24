@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
+  const MainDrawer({super.key,required this.onSelectScreen});
+  final void Function(String identifire) onSelectScreen;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -9,7 +10,7 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: [
           DrawerHeader(
-            padding: EdgeInsets.all(20),
+            padding:const EdgeInsets.all(20),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -36,7 +37,9 @@ class MainDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onBackground,
               fontSize: 24
             )),
-            onTap: (){},
+            onTap: (){
+              onSelectScreen('meal');
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings,color: Theme.of(context).colorScheme.onBackground,),
@@ -44,7 +47,9 @@ class MainDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 24
             )),
-            onTap: (){},
+            onTap: (){
+              onSelectScreen('filters');
+            },
           )
         ],
       ),
